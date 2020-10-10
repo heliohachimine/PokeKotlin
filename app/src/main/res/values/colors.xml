@@ -3,4 +3,50 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="typeBug">#8CB230</color>
+    <color name="typeDark">#58575F</color>
+    <color name="typeDragon">#0F6AC0</color>
+    <color name="typeEletric">#EED535</color>
+    <color name="typeFairy">#ED6EC7</color>
+    <color name="typeFighting">#D04164</color>
+    <color name="typeFire">#FD7D24</color>
+    <color name="typeFlying">#748FC9</color>
+    <color name="typeGhost">#556AAE</color>
+    <color name="typeGrass">#62B957</color>
+    <color name="typeGround">#DD7748</color>
+    <color name="typeIce">#61CEC0</color>
+    <color name="typeNormal">#9DA0AA</color>
+    <color name="typePoison">#A552CC</color>
+    <color name="typePsychic">#EA5D60</color>
+    <color name="typeRock">#BAAB82</color>
+    <color name="typeSteel">#417D9A</color>
+    <color name="typeWater">#4A90DA</color>
+
+    <color name="backgroundTypeBug">#8BD974</color>
+    <color name="backgroundTypeDark">#6F6E78</color>
+    <color name="backgroundTypeDragon">#7383B9</color>
+    <color name="backgroundTypeEletric">#F2CB55</color>
+    <color name="backgroundTypeFairy">#EBA8C3</color>
+    <color name="backgroundTypeFighting">#EB4971</color>
+    <color name="backgroundTypeFire">#FFA756</color>
+    <color name="backgroundTypeFlying">#83A2E3</color>
+    <color name="backgroundTypeGhost">#8571BE</color>
+    <color name="backgroundTypeGrass">#8BBE8A</color>
+    <color name="backgroundTypeGround">#F78551</color>
+    <color name="backgroundTypeIce">#91D8DF</color>
+    <color name="backgroundTypeNormal">#B5B9C4</color>
+    <color name="backgroundTypePoison">#9F6E97</color>
+    <color name="backgroundTypePsychic">#FF6568</color>
+    <color name="backgroundTypeRock">#D4C294</color>
+    <color name="backgroundTypeSteel">#4C91B2</color>
+    <color name="backgroundTypeWater">#58AbF6</color>
+
+    <color name="textWhite">#FFFFFF</color>
+    <color name="textBlack">#17171B</color>
+    <color name="textGrey">#747476</color>
+    <color name="textNumber">#9017171B</color>
+
+    <color name="pokeball">#10FFFFFF</color>
+
 </resources>

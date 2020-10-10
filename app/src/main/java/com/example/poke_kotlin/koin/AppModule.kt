@@ -1,6 +1,7 @@
 package com.example.poke_kotlin.koin
 
 import com.example.poke_kotlin.data.PokeService
+import com.example.poke_kotlin.presentation.PokeAdapter
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.qualifier.named
@@ -49,6 +50,10 @@ val appModule = module {
 
     single {
         get<Retrofit>().create(PokeService::class.java)
+    }
+
+    factory {
+        PokeAdapter()
     }
 
 }

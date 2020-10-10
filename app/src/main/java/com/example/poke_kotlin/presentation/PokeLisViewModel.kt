@@ -1,4 +1,4 @@
-package com.example.poke_kotlin
+package com.example.poke_kotlin.presentation
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,7 +16,12 @@ class PokeLisViewModel(private val repository: PokeRepository) : ViewModel() {
         viewModelScope.launch {
             kotlin.runCatching {
                 val pokemon = async { repository.getAllPokemons(offset, limit) }
-                pokemonsMutableLiveData.postValue(pokemon.await().results.toList())
+                val pokeList = ArrayList<Pokemon>()
+                pokemon.await().results.toList().forEach {
+                    val pokemonDetailed = async { repository.getSinglePokemon(it.name) }
+                    pokeList.add(pokemonDetailed.await())
+                }
+                pokemonsMutableLiveData.postValue(pokeList)
             }.onFailure {
 
             }
