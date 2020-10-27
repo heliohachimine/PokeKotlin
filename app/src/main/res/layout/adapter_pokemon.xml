@@ -43,6 +43,13 @@
             app:layout_constraintTop_toBottomOf="@id/poke_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
+        <com.example.poke_kotlin.presentation.TypeComponent
+            android:id="@+id/type_slot_2"
+            android:layout_width="88dp"
+            android:layout_height="32dp"
+            app:layout_constraintTop_toTopOf="@id/type_slot_1"
+            app:layout_constraintBottom_toBottomOf="@id/type_slot_1"
+            app:layout_constraintStart_toEndOf="@id/type_slot_1"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -58,6 +65,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginEnd="16dp"
+        android:transitionName="POKE_TRANSITION"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

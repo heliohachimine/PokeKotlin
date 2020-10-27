@@ -40,24 +40,78 @@ class TypeComponent @JvmOverloads constructor(
 
     private fun setIcon(type: String) {
         when(type) {
-            "bug" -> ic_type.setBackgroundResource(R.drawable.ic_bug)
-            "dark" -> ic_type.setBackgroundResource(R.drawable.ic_dark)
-            "dragon" -> ic_type.setBackgroundResource(R.drawable.ic_dragon)
-            "eletric" -> ic_type.setBackgroundResource(R.drawable.ic_eletric)
-            "fairy" -> ic_type.setBackgroundResource(R.drawable.ic_fairy)
-            "fighting" -> ic_type.setBackgroundResource(R.drawable.ic_fighting)
-            "fire" -> ic_type.setBackgroundResource(R.drawable.ic_fire)
-            "flying" -> ic_type.setBackgroundResource(R.drawable.ic_flying)
-            "ghost" -> ic_type.setBackgroundResource(R.drawable.ic_ghost)
-            "grass" -> ic_type.setBackgroundResource(R.drawable.ic_grass)
-            "ground" -> ic_type.setBackgroundResource(R.drawable.ic_ground)
-            "ice" -> ic_type.setBackgroundResource(R.drawable.ic_ice)
-            "normal" -> ic_type.setBackgroundResource(R.drawable.ic_normal)
-            "poison" -> ic_type.setBackgroundResource(R.drawable.ic_poison)
-            "psychic" -> ic_type.setBackgroundResource(R.drawable.ic_psychic)
-            "rock" -> ic_type.setBackgroundResource(R.drawable.ic_rock)
-            "steel" -> ic_type.setBackgroundResource(R.drawable.ic_steel)
-            "water" -> ic_type.setBackgroundResource(R.drawable.ic_water)
+            "bug" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_bug)
+                container_type.setBackgroundResource(R.color.typeBug)
+            }
+            "dark" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_dark)
+                container_type.setBackgroundResource(R.color.typeDark)
+            }
+            "dragon" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_dragon)
+                container_type.setBackgroundResource(R.color.typeDragon)
+            }
+            "eletric" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_eletric)
+                container_type.setBackgroundResource(R.color.typeEletric)
+            }
+            "fairy" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_fairy)
+                container_type.setBackgroundResource(R.color.typeFairy)
+            }
+            "fighting" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_fighting)
+                container_type.setBackgroundResource(R.color.typeFighting)
+            }
+            "fire" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_fire)
+                container_type.setBackgroundResource(R.color.typeFire)
+            }
+            "flying" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_flying)
+                container_type.setBackgroundResource(R.color.typeFlying)
+            }
+            "ghost" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_ghost)
+                container_type.setBackgroundResource(R.color.typeGhost)
+            }
+            "grass" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_grass)
+                container_type.setBackgroundResource(R.color.typeGrass)
+            }
+            "ground" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_ground)
+                container_type.setBackgroundResource(R.color.typeGround)
+            }
+            "ice" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_ice)
+                container_type.setBackgroundResource(R.color.typeIce)
+            }
+            "normal" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_normal)
+                container_type.setBackgroundResource(R.color.typeNormal)
+            }
+            "poison" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_poison)
+                container_type.setBackgroundResource(R.color.typePoison)
+            }
+            "psychic" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_psychic)
+                container_type.setBackgroundResource(R.color.typePsychic)
+            }
+            "rock" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_rock)
+                container_type.setBackgroundResource(R.color.typeRock)
+            }
+            "steel" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_steel)
+                container_type.setBackgroundResource(R.color.typeSteel)
+            }
+            "water" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_water)
+                container_type.setBackgroundResource(R.color.typeWater)
+            }
         }
     }
 }
