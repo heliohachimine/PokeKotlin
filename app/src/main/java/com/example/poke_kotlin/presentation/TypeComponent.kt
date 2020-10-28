@@ -98,7 +98,7 @@ class TypeComponent @JvmOverloads constructor(
             }
             "psychic" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_psychic)
-                container_type.setBackgroundResource(R.color.typePsychic)
+                container_type.setBackgroundResource(R.drawable.background_type_psychic)
             }
             "rock" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_rock)
