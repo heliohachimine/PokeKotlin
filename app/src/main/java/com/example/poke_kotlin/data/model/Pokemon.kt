@@ -6,5 +6,7 @@ data class Pokemon(
     val url: String,
     val weight: String,
     val sprites: SpriteResult,
-    val types: List<TypeResult>
+    val types: List<TypeResult>,
+    val height: String,
+    val width: String
 )

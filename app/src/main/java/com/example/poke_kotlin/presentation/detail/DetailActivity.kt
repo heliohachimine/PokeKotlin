@@ -17,6 +17,9 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var pokemonNumber: String
     private lateinit var pokemon: Pokemon
 
+    private val aboutFragment = AboutFragment()
+    private val statsFragment = StatsFragment()
+    private val evolutionFragment = EvolutionFragment()
     private val fragments = ArrayList<FragmentPage>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,13 +32,14 @@ class DetailActivity : AppCompatActivity() {
             pokemonNumber = intent.getStringExtra("item_number").toString()
             tv_number.text = Utils().formatPokeNumber(pokemonNumber)
         }
+
         if (intent.hasExtra("item_image")) {
             Glide.with(this).load(intent.getStringExtra("item_image"))
                 .into(iv_pokemon)
         }
-        if (intent.hasExtra("item_name")) {
-            tv_name.text = intent.getStringExtra("item_name")
-        }
+
+        //TODO remover dados passados por intent e deixar apenas o numero
+
         viewModel.getPokemon(pokemonNumber)
         if (intent.hasExtra("item_type")) {
             setupType(intent.getStringExtra("item_type"))
@@ -44,15 +48,18 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun setupViewPager() {
-        fragments.add(FragmentPage(title = "About", fragment = AboutFragment()))
-        fragments.add(FragmentPage(title = "Stats", fragment = StatsFragment()))
-        fragments.add(FragmentPage(title = "Evolution", fragment = EvolutionFragment()))
+        //TODO remover os titulos hard coded
+        fragments.add(FragmentPage(title = "About", fragment = aboutFragment))
+        fragments.add(FragmentPage(title = "Stats", fragment = statsFragment))
+        fragments.add(FragmentPage(title = "Evolution", fragment = evolutionFragment))
         pager.adapter = DetailPageAdapter(supportFragmentManager, fragments)
     }
 
     private fun subscribeLiveData() {
         viewModel.pokemonMutableLiveData.observe(this, Observer {   pokemon ->
             tv_name.text = pokemon.name
+            aboutFragment.setData(pokemon)
+
             detail_type_slot_1.setType(pokemon.types[0].type.name)
             if (pokemon.types.size > 1) {
                 detail_type_slot_2.visibility = View.VISIBLE
