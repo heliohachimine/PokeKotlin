@@ -34,7 +34,7 @@ class DetailActivity : AppCompatActivity() {
             "bug" -> container.setBackgroundColor(this.getColor(R.color.backgroundTypeBug))
             "dark" -> container.setBackgroundColor(this.getColor(R.color.backgroundTypeDark))
             "dragon" -> container.setBackgroundColor(this.getColor(R.color.backgroundTypeDragon))
-            "eletric" -> container.setBackgroundColor(this.getColor(R.color.backgroundTypeEletric))
+            "eletric" -> container.setBackgroundColor(this.getColor(R.color.backgroundTypeElectric))
             "fairy" -> container.setBackgroundColor(this.getColor(R.color.backgroundTypeFairy))
             "fighting" -> container.setBackgroundColor(this.getColor(R.color.backgroundTypeFighting))
             "fire" -> container.setBackgroundColor(this.getColor(R.color.backgroundTypeFire))

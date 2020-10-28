@@ -7,7 +7,7 @@
     <color name="typeBug">#8CB230</color>
     <color name="typeDark">#58575F</color>
     <color name="typeDragon">#0F6AC0</color>
-    <color name="typeEletric">#EED535</color>
+    <color name="typeElectric">#EED535</color>
     <color name="typeFairy">#ED6EC7</color>
     <color name="typeFighting">#D04164</color>
     <color name="typeFire">#FD7D24</color>
@@ -26,7 +26,7 @@
     <color name="backgroundTypeBug">#8BD974</color>
     <color name="backgroundTypeDark">#6F6E78</color>
     <color name="backgroundTypeDragon">#7383B9</color>
-    <color name="backgroundTypeEletric">#F2CB55</color>
+    <color name="backgroundTypeElectric">#F2CB55</color>
     <color name="backgroundTypeFairy">#EBA8C3</color>
     <color name="backgroundTypeFighting">#EB4971</color>
     <color name="backgroundTypeFire">#FFA756</color>

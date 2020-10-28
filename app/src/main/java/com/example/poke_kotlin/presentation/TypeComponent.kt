@@ -42,59 +42,59 @@ class TypeComponent @JvmOverloads constructor(
         when(type) {
             "bug" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_bug)
-                container_type.setBackgroundResource(R.color.typeBug)
+                container_type.setBackgroundResource(R.drawable.background_type_bug)
             }
             "dark" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_dark)
-                container_type.setBackgroundResource(R.color.typeDark)
+                container_type.setBackgroundResource(R.drawable.background_type_dark)
             }
             "dragon" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_dragon)
-                container_type.setBackgroundResource(R.color.typeDragon)
+                container_type.setBackgroundResource(R.drawable.background_type_dragon)
             }
-            "eletric" -> {
-                ic_type.setBackgroundResource(R.drawable.ic_eletric)
-                container_type.setBackgroundResource(R.color.typeEletric)
+            "electric" -> {
+                ic_type.setBackgroundResource(R.drawable.ic_electric)
+                container_type.setBackgroundResource(R.drawable.background_type_electric)
             }
             "fairy" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_fairy)
-                container_type.setBackgroundResource(R.color.typeFairy)
+                container_type.setBackgroundResource(R.drawable.background_type_fairy)
             }
             "fighting" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_fighting)
-                container_type.setBackgroundResource(R.color.typeFighting)
+                container_type.setBackgroundResource(R.drawable.background_type_fighting)
             }
             "fire" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_fire)
-                container_type.setBackgroundResource(R.color.typeFire)
+                container_type.setBackgroundResource(R.drawable.background_type_fire)
             }
             "flying" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_flying)
-                container_type.setBackgroundResource(R.color.typeFlying)
+                container_type.setBackgroundResource(R.drawable.background_type_flying)
             }
             "ghost" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_ghost)
-                container_type.setBackgroundResource(R.color.typeGhost)
+                container_type.setBackgroundResource(R.drawable.background_type_ghost)
             }
             "grass" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_grass)
-                container_type.setBackgroundResource(R.color.typeGrass)
+                container_type.setBackgroundResource(R.drawable.background_type_grass)
             }
             "ground" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_ground)
-                container_type.setBackgroundResource(R.color.typeGround)
+                container_type.setBackgroundResource(R.drawable.background_type_ground)
             }
             "ice" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_ice)
-                container_type.setBackgroundResource(R.color.typeIce)
+                container_type.setBackgroundResource(R.drawable.background_type_ice)
             }
             "normal" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_normal)
-                container_type.setBackgroundResource(R.color.typeNormal)
+                container_type.setBackgroundResource(R.drawable.background_type_normal)
             }
             "poison" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_poison)
-                container_type.setBackgroundResource(R.color.typePoison)
+                container_type.setBackgroundResource(R.drawable.background_type_poison)
             }
             "psychic" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_psychic)
@@ -102,15 +102,15 @@ class TypeComponent @JvmOverloads constructor(
             }
             "rock" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_rock)
-                container_type.setBackgroundResource(R.color.typeRock)
+                container_type.setBackgroundResource(R.drawable.background_type_rock)
             }
             "steel" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_steel)
-                container_type.setBackgroundResource(R.color.typeSteel)
+                container_type.setBackgroundResource(R.drawable.background_type_steel)
             }
             "water" -> {
                 ic_type.setBackgroundResource(R.drawable.ic_water)
-                container_type.setBackgroundResource(R.color.typeWater)
+                container_type.setBackgroundResource(R.drawable.background_type_water)
             }
         }
     }

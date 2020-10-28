@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
-        android:padding="8dp"
-        android:background="@drawable/background_card">
+        android:padding="8dp">
         <TextView
             android:id="@+id/poke_id"
             android:layout_width="60dp"

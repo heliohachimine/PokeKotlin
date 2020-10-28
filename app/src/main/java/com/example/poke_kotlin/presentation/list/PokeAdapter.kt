@@ -3,13 +3,11 @@ package com.example.poke_kotlin.presentation.list
 import android.app.Activity
 import android.app.ActivityOptions
 import android.content.Intent
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -19,7 +17,7 @@ import com.example.poke_kotlin.data.model.Pokemon
 import com.example.poke_kotlin.presentation.TypeComponent
 import com.example.poke_kotlin.presentation.detail.DetailActivity
 
-class PokeAdapter() : RecyclerView.Adapter<PokeViewHolder>() {
+class PokeAdapter : RecyclerView.Adapter<PokeViewHolder>() {
 
     private var pokemons: List<Pokemon> = ArrayList()
 
@@ -34,7 +32,6 @@ class PokeAdapter() : RecyclerView.Adapter<PokeViewHolder>() {
 
     override fun getItemCount(): Int = this.pokemons.size
 
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun onBindViewHolder(holder: PokeViewHolder, position: Int) {
         holder.bind(pokemons[position])
         holder.item.setOnClickListener {
@@ -65,7 +62,6 @@ class PokeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val type1: TypeComponent = itemView.findViewById(R.id.type_slot_1)
     val type2: TypeComponent = itemView.findViewById(R.id.type_slot_2)
 
-    @RequiresApi(Build.VERSION_CODES.M)
     fun bind(pokemon: Pokemon) {
         id.text = Utils().formatPokeNumber(pokemon.id)
         name.text = pokemon.name
@@ -76,32 +72,31 @@ class PokeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         } else {
             type2.visibility = View.INVISIBLE
         }
-        setupType(pokemon.types[0].type.name)
+        setupBackground(pokemon.types[0].type.name)
         Glide.with(itemView.context).load(pokemon.sprites.other.image.url)
             .into(image)
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
-    private fun setupType(type: String) {
+    private fun setupBackground(type: String) {
         when(type) {
-            "bug" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeBug))
-            "dark" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeDark))
-            "dragon" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeDragon))
-            "eletric" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeEletric))
-            "fairy" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeFairy))
-            "fighting" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeFighting))
-            "fire" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeFire))
-            "flying" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeFlying))
-            "ghost" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeGhost))
-            "grass" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeGrass))
-            "ground" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeGround))
-            "ice" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeIce))
-            "normal" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeNormal))
-            "poison" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypePoison))
-            "psychic" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypePsychic))
-            "rock" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeRock))
-            "steel" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeSteel))
-            "water" -> card.setBackgroundColor(itemView.context.getColor(R.color.backgroundTypeWater))
+            "bug" -> card.setBackgroundResource(R.drawable.background_card_bug)
+            "dark" -> card.setBackgroundResource(R.drawable.background_card_dark)
+            "dragon" -> card.setBackgroundResource(R.drawable.background_card_dragon)
+            "electric" -> card.setBackgroundResource(R.drawable.background_card_electric)
+            "fairy" -> card.setBackgroundResource(R.drawable.background_card_fairy)
+            "fighting" -> card.setBackgroundResource(R.drawable.background_card_fighting)
+            "fire" -> card.setBackgroundResource(R.drawable.background_card_fire)
+            "flying" -> card.setBackgroundResource(R.drawable.background_card_flying)
+            "ghost" -> card.setBackgroundResource(R.drawable.background_card_ghost)
+            "grass" -> card.setBackgroundResource(R.drawable.background_card_grass)
+            "ground" -> card.setBackgroundResource(R.drawable.background_card_ground)
+            "ice" -> card.setBackgroundResource(R.drawable.background_card_ice)
+            "normal" -> card.setBackgroundResource(R.drawable.background_card_normal)
+            "poison" -> card.setBackgroundResource(R.drawable.background_card_poison)
+            "psychic" -> card.setBackgroundResource(R.drawable.background_card_psychic)
+            "rock" -> card.setBackgroundResource(R.drawable.background_card_rock)
+            "steel" -> card.setBackgroundResource(R.drawable.background_card_steel)
+            "water" -> card.setBackgroundResource(R.drawable.background_card_water)
         }
     }
 }
