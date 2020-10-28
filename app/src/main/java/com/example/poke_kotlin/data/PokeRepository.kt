@@ -9,7 +9,7 @@ class PokeRepository(private val service: PokeService) {
         return service.getAllPokemons(page = page)
     }
 
-    suspend fun getSinglePokemon(name: String): Pokemon {
-        return service.getSinglePokemon(name)
+    suspend fun getSinglePokemon(query: String): Pokemon {
+        return service.getSinglePokemon(query)
     }
 }

@@ -9,6 +9,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="240dp"
+        tools:background="@color/typeNormal"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -21,19 +22,62 @@
             android:layout_marginStart="40dp"
             android:transitionName="POKE_TRANSITION"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            tools:background="@color/typeWater"/>
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="12dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/textNumber"
+            app:layout_constraintStart_toEndOf="@id/iv_pokemon"
+            app:layout_constraintTop_toTopOf="@id/iv_pokemon"
+            tools:text="#1"/>
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginStart="12dp"
             android:textSize="24sp"
+            android:textStyle="bold"
             android:textColor="@color/textWhite"
             app:layout_constraintStart_toEndOf="@id/iv_pokemon"
-            app:layout_constraintTop_toTopOf="@id/iv_pokemon"
+            app:layout_constraintTop_toBottomOf="@id/tv_number"
             tools:text="Bulbasaur"/>
+        <com.example.poke_kotlin.presentation.TypeComponent
+            android:id="@+id/detail_type_slot_1"
+            android:layout_width="88dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintStart_toEndOf="@id/iv_pokemon"/>
+        <com.example.poke_kotlin.presentation.TypeComponent
+            android:id="@+id/detail_type_slot_2"
+            android:layout_width="88dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintStart_toEndOf="@id/detail_type_slot_1"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.viewpager.widget.ViewPager>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

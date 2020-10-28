@@ -36,6 +36,7 @@ class PokeAdapter : RecyclerView.Adapter<PokeViewHolder>() {
         holder.bind(pokemons[position])
         holder.item.setOnClickListener {
             val intent = Intent(it.context, DetailActivity::class.java)
+            intent.putExtra("item_number", pokemons[position].id)
             intent.putExtra("item_image", pokemons[position].sprites.other.image.url)
             intent.putExtra("item_name", pokemons[position].name)
             intent.putExtra("item_type", pokemons[position].types[0].type.name)

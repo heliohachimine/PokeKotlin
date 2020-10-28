@@ -38,6 +38,7 @@ class TypeComponent @JvmOverloads constructor(
         text_type.text = type
     }
 
+    //TODO implementar um ENUM para type isso evitará bugs por escrita errada
     private fun setIcon(type: String) {
         when(type) {
             "bug" -> {
