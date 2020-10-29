@@ -29,8 +29,9 @@ class AboutFragment(val id: String, val type: String) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tv_pokedex_data.setTextColor(resources.getColor(Utils().getColorByPokemonType(type)))
-        tv_training.setTextColor(resources.getColor(Utils().getColorByPokemonType(type)))
+        tv_pokedex_data.setTextColor(resources.getColor(Utils.getColorByPokemonType(type)))
+        tv_training.setTextColor(resources.getColor(Utils.getColorByPokemonType(type)))
+        tv_breeding.setTextColor(resources.getColor(Utils.getColorByPokemonType(type)))
 
         setFields()
     }
@@ -45,8 +46,8 @@ class AboutFragment(val id: String, val type: String) : Fragment() {
 
     //TODO passar somente os dados necessarios para otimizar o fluxo de dados
     fun setData(pokemon: Pokemon) {
-        weight = Utils().formatWeight(pokemon.weight)
-        height = Utils().formatHeight(pokemon.height)
+        weight = Utils.formatWeight(pokemon.weight)
+        height = Utils.formatHeight(pokemon.height)
         baseExperience = pokemon.baseExperience
         setFields()
     }
@@ -70,6 +71,14 @@ class AboutFragment(val id: String, val type: String) : Fragment() {
             tv_base_happiness.text = it.baseHappiness
             tv_capture_rate.text = it.captureRate
             tv_growth_rate.text = it.growthRate.name
+            tv_egg_cycle.text = it.hatchCounter
+
+            var eggsGroup = ""
+            it.eggGroup.forEach { egg ->
+                eggsGroup = eggsGroup + " " + egg.name
+            }
+            tv_eggs_group.text = eggsGroup
+
         })
     }
 }

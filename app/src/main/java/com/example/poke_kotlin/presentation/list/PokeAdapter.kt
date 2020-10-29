@@ -64,7 +64,7 @@ class PokeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val type2: TypeComponent = itemView.findViewById(R.id.type_slot_2)
 
     fun bind(pokemon: Pokemon) {
-        id.text = Utils().formatPokeNumber(pokemon.id)
+        id.text = Utils.formatPokeNumber(pokemon.id)
         name.text = pokemon.name
         type1.setType(pokemon.types[0].type.name)
         if (pokemon.types.size > 1) {

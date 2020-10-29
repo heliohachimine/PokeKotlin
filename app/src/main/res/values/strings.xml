@@ -14,4 +14,7 @@
     <string name="width">Width</string>
     <string name="pokedex_data">Pokedex Data</string>
     <string name="height">Height</string>
+    <string name="breeding">Breeding</string>
+    <string name="eggs_group">Eggs Group</string>
+    <string name="eggs_cycle">Egg Cycle</string>
 </resources>

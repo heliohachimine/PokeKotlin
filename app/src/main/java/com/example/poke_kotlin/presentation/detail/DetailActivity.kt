@@ -8,6 +8,8 @@ import com.bumptech.glide.Glide
 import com.example.poke_kotlin.R
 import com.example.poke_kotlin.Utils
 import com.example.poke_kotlin.presentation.detail.about.AboutFragment
+import com.example.poke_kotlin.presentation.detail.evolution.EvolutionFragment
+import com.example.poke_kotlin.presentation.detail.stats.StatsFragment
 import kotlinx.android.synthetic.main.activity_detail.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -17,8 +19,10 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var pokemonNumber: String
 
     private lateinit var aboutFragment: AboutFragment
-    private val statsFragment = StatsFragment()
-    private val evolutionFragment = EvolutionFragment()
+    private val statsFragment =
+        StatsFragment()
+    private val evolutionFragment =
+        EvolutionFragment()
     private val fragments = ArrayList<FragmentPage>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +34,7 @@ class DetailActivity : AppCompatActivity() {
 
         if (intent.hasExtra("item_number")) {
             pokemonNumber = intent.getStringExtra("item_number").toString()
-            tv_number.text = Utils().formatPokeNumber(pokemonNumber)
+            tv_number.text = Utils.formatPokeNumber(pokemonNumber)
         }
 
         if (intent.hasExtra("item_image")) {
@@ -41,7 +45,7 @@ class DetailActivity : AppCompatActivity() {
         viewModel.getPokemon(pokemonNumber)
         if (intent.hasExtra("item_type")) {
             val type = intent.getStringExtra("item_type")
-            detail_tab_layout.setSelectedTabIndicatorColor(resources.getColor(Utils().getColorByPokemonType(type)))
+            detail_tab_layout.setSelectedTabIndicatorColor(resources.getColor(Utils.getColorByPokemonType(type)))
             aboutFragment = AboutFragment(pokemonNumber, type.orEmpty())
             setupType(type)
 
@@ -74,6 +78,6 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun setupType(type: String?) {
-        container.setBackgroundResource(Utils().getColorByPokemonType(type))
+        container.setBackgroundResource(Utils.getColorByPokemonType(type))
     }
 }
