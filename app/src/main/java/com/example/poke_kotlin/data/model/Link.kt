@@ -1,6 +1,6 @@
 package com.example.poke_kotlin.data.model
 
-data class Type(
+data class Link(
     val name: String,
     val url: String
 )

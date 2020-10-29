@@ -1,5 +1,7 @@
 package com.example.poke_kotlin.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Pokemon(
     val id: String,
     val name: String,
@@ -8,5 +10,5 @@ data class Pokemon(
     val sprites: SpriteResult,
     val types: List<TypeResult>,
     val height: String,
-    val width: String
+    @SerializedName("base_experience") val baseExperience: String
 )
