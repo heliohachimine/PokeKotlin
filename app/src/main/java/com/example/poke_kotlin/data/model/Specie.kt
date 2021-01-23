@@ -7,5 +7,10 @@ data class Specie(
     @SerializedName("capture_rate") val captureRate: String,
     @SerializedName("growth_rate") val growthRate: Link,
     @SerializedName("egg_groups") val eggGroup: List<Link>,
-    @SerializedName("hatch_counter") val hatchCounter: String
+    @SerializedName("hatch_counter") val hatchCounter: String,
+    @SerializedName("evolution_chain") val evolutionChain: EvolutionChain
+)
+
+data class EvolutionChain(
+    val url: String
 )

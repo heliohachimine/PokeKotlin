@@ -1,6 +1,7 @@
 package com.example.poke_kotlin.koin
 
 import com.example.poke_kotlin.data.PokeService
+import com.example.poke_kotlin.presentation.detail.evolution.EvolutionAdapter
 import com.example.poke_kotlin.presentation.list.PokeAdapter
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
@@ -54,6 +55,10 @@ val appModule = module {
 
     factory {
         PokeAdapter()
+    }
+
+    factory {
+        EvolutionAdapter()
     }
 
 }

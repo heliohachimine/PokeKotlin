@@ -6,6 +6,8 @@
     <dimen name="margin_large">16dp</dimen>
     <dimen name="margin_extra_large">24dp</dimen>
 
+    <dimen name="padding_fragment">24dp</dimen>
+
     <dimen name="about_distance">160dp</dimen>
     <dimen name="card_radius">16dp</dimen>
     <dimen name="type_component_radius">8dp</dimen>

@@ -10,7 +10,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="24dp">
+            android:padding="@dimen/padding_fragment">
 
             <TextView
                 android:id="@+id/tv_pokedex_data"

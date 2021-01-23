@@ -1,6 +1,8 @@
 package com.example.poke_kotlin.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class TypeResult (
-    val slot: Int,
-    val type: Link
+    @SerializedName("slot")val slot: Int,
+    @SerializedName("type") val type: Link
 )

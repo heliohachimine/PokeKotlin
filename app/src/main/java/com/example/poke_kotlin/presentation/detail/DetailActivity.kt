@@ -19,18 +19,14 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var pokemonNumber: String
 
     private lateinit var aboutFragment: AboutFragment
-    private val statsFragment =
-        StatsFragment()
-    private val evolutionFragment =
-        EvolutionFragment()
+    private val statsFragment = StatsFragment()
+    private lateinit var evolutionFragment: EvolutionFragment
     private val fragments = ArrayList<FragmentPage>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-
         supportActionBar?.hide()
-
 
         if (intent.hasExtra("item_number")) {
             pokemonNumber = intent.getStringExtra("item_number").toString()
@@ -46,7 +42,9 @@ class DetailActivity : AppCompatActivity() {
         if (intent.hasExtra("item_type")) {
             val type = intent.getStringExtra("item_type")
             detail_tab_layout.setSelectedTabIndicatorColor(resources.getColor(Utils.getColorByPokemonType(type)))
-            aboutFragment = AboutFragment(pokemonNumber, type.orEmpty())
+            aboutFragment = AboutFragment(id = pokemonNumber, type = type.orEmpty())
+            //TODO é necessario passar o id chain nao o id do pokemon
+            evolutionFragment = EvolutionFragment(idChain = pokemonNumber, type = type.orEmpty())
             setupType(type)
 
         }

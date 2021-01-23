@@ -1,9 +1,6 @@
 package com.example.poke_kotlin.data
 
-import com.example.poke_kotlin.data.model.PokeResults
-import com.example.poke_kotlin.data.model.Pokemon
-import com.example.poke_kotlin.data.model.Specie
-import com.example.poke_kotlin.data.model.TypeDetail
+import com.example.poke_kotlin.data.model.*
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -29,4 +26,9 @@ interface PokeService {
     suspend fun getSpecie(
         @Path("id") id: String
     ): Specie
+
+    @GET("evolution-chain/{id}")
+    suspend fun getEvolutions(
+        @Path("id") id: String
+    ): EvolutionResult
 }

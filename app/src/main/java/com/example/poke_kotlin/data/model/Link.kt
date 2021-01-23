@@ -1,6 +1,8 @@
 package com.example.poke_kotlin.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Link(
-    val name: String,
-    val url: String
+    @SerializedName("name") val name: String,
+    @SerializedName("url") val url: String
 )

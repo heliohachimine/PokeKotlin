@@ -3,8 +3,9 @@ package com.example.poke_kotlin.data.model
 import com.google.gson.annotations.SerializedName
 
 data class SpriteResult(
-    val other: Image
+    @SerializedName("other") val other: Image
 )
+
 data class Image(
     @SerializedName("official-artwork")val image: Url
 )
