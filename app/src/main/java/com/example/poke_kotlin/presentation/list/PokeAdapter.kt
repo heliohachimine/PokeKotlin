@@ -2,6 +2,7 @@ package com.example.poke_kotlin.presentation.list
 
 import android.app.Activity
 import android.app.ActivityOptions
+import android.view.animation.AnimationUtils
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -45,6 +46,7 @@ class PokeAdapter : RecyclerView.Adapter<PokeViewHolder>() {
             val options = ActivityOptions.makeSceneTransitionAnimation(it.context as Activity, sharedElement, "POKE_TRANSITION" )
             it.context.startActivity(intent, options.toBundle())
         }
+        holder.item.animation = AnimationUtils.loadAnimation(holder.item.context, R.anim.layout_animation)
     }
 
     fun setList(pokemons: List<Pokemon>) {
