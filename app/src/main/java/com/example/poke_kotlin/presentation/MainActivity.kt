@@ -2,11 +2,9 @@ package com.example.poke_kotlin.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.poke_kotlin.R
-import com.example.poke_kotlin.databinding.ActivityMainBinding
 import com.example.poke_kotlin.presentation.list.PaginationScrollListener
 import com.example.poke_kotlin.presentation.list.PokeAdapter
 import com.example.poke_kotlin.presentation.list.PokeListViewModel
@@ -18,14 +16,13 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel: PokeListViewModel by viewModel()
     private val pokeAdapter: PokeAdapter by inject()
-    private lateinit var binding: ActivityMainBinding
     private var page = 0
     private var isLastPage = false
     private var isLoading = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        setContentView(R.layout.activity_main)
         supportActionBar?.hide()
         viewModel.getAllPokemon((page*20).toString())
         setupRecyclerView()
@@ -34,8 +31,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        binding.pokeList.adapter = pokeAdapter
-        binding.pokeList.layoutManager = LinearLayoutManager(this)
+        poke_list.adapter = pokeAdapter
+        poke_list.layoutManager = LinearLayoutManager(this)
     }
 
     private fun getMoreItems() {
@@ -43,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setRecyclerViewScrollListener() {
-        poke_list.addOnScrollListener(object : PaginationScrollListener(binding.pokeList.layoutManager as LinearLayoutManager) {
+        poke_list.addOnScrollListener(object : PaginationScrollListener(poke_list.layoutManager as LinearLayoutManager) {
             override fun isLastPage(): Boolean {
                 return isLastPage
             }
