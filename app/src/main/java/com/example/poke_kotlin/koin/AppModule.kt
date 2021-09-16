@@ -60,5 +60,4 @@ val appModule = module {
     factory {
         EvolutionAdapter()
     }
-
 }

@@ -5,7 +5,7 @@ import com.example.poke_kotlin.data.model.*
 class PokeRepository(private val service: PokeService) {
 
     suspend fun getAllPokemons(page: String): PokeResults {
-        return service.getAllPokemons(page = page)
+        return service.getAllPokemons(page = page, limit = "20")
     }
 
     suspend fun getSinglePokemon(query: String): Pokemon {

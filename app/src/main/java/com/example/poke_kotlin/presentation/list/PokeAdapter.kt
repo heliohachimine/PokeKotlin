@@ -20,7 +20,7 @@ import com.example.poke_kotlin.presentation.detail.DetailActivity
 
 class PokeAdapter : RecyclerView.Adapter<PokeViewHolder>() {
 
-    private var pokemons: List<Pokemon> = ArrayList()
+    private var pokemons: ArrayList<Pokemon> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokeViewHolder {
         val view = LayoutInflater
@@ -33,14 +33,19 @@ class PokeAdapter : RecyclerView.Adapter<PokeViewHolder>() {
 
     override fun getItemCount(): Int = this.pokemons.size
 
+    override fun getItemId(position: Int): Long {
+        val pokemon = pokemons[position]
+        return pokemon.id?.toLong() ?: 0
+    }
+
     override fun onBindViewHolder(holder: PokeViewHolder, position: Int) {
         holder.bind(pokemons[position])
         holder.item.setOnClickListener {
             val intent = Intent(it.context, DetailActivity::class.java)
             intent.putExtra("item_number", pokemons[position].id)
-            intent.putExtra("item_image", pokemons[position].sprites.other.image.url)
+            intent.putExtra("item_image", pokemons[position].sprites?.other?.image?.url)
             intent.putExtra("item_name", pokemons[position].name)
-            intent.putExtra("item_type", pokemons[position].types[0].type.name)
+            intent.putExtra("item_type", pokemons[position].types?.get(0)?.type?.name)
             val sharedElement = holder.image
             sharedElement.transitionName = "POKE_TRANSITION"
             val options = ActivityOptions.makeSceneTransitionAnimation(it.context as Activity, sharedElement, "POKE_TRANSITION" )
@@ -49,9 +54,9 @@ class PokeAdapter : RecyclerView.Adapter<PokeViewHolder>() {
         holder.item.animation = AnimationUtils.loadAnimation(holder.item.context, R.anim.layout_animation)
     }
 
-    fun setList(pokemons: List<Pokemon>) {
-        this.pokemons = pokemons
-        notifyDataSetChanged()
+    fun addItems(pokemons: List<Pokemon>) {
+        this.pokemons.addAll(pokemons)
+        notifyItemRangeChanged(0, pokemons.size)
     }
 }
 
@@ -66,17 +71,22 @@ class PokeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val type2: TypeComponent = itemView.findViewById(R.id.type_slot_2)
 
     fun bind(pokemon: Pokemon) {
-        id.text = Utils.formatPokeNumber(pokemon.id)
+        id.text = pokemon.id?.let { Utils.formatPokeNumber(it) }
         name.text = pokemon.name
-        type1.setType(pokemon.types[0].type.name)
-        if (pokemon.types.size > 1) {
-            type2.visibility = View.VISIBLE
-            type2.setType(pokemon.types[1].type.name)
-        } else {
-            type2.visibility = View.INVISIBLE
+        pokemon.types?.let { types ->
+            if (types.isNotEmpty()) {
+                types[0].type.let { type1.setType(it.name) }
+                if (types.size > 1) {
+                    type2.visibility = View.VISIBLE
+                    types[1].type.let { type2.setType(it.name) }
+                } else {
+                    type2.visibility = View.INVISIBLE
+                }
+                setupBackground(types[0].type.name)
+            }
         }
-        setupBackground(pokemon.types[0].type.name)
-        Glide.with(itemView.context).load(pokemon.sprites.other.image.url)
+
+        Glide.with(itemView.context).load(pokemon.sprites?.other?.image?.url)
             .into(image)
     }
 

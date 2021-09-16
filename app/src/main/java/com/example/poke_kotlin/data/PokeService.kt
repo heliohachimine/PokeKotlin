@@ -9,7 +9,8 @@ interface PokeService {
 
     @GET("pokemon")
     suspend fun getAllPokemons(
-        @Query("offset")page: String
+        @Query("offset")page: String,
+        @Query("limit")limit: String
     ): PokeResults
 
     @GET("pokemon/{name}")

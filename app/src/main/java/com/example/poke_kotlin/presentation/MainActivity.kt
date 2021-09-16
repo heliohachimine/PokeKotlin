@@ -1,6 +1,7 @@
 package com.example.poke_kotlin.presentation
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,6 +12,10 @@ import com.example.poke_kotlin.presentation.list.PokeListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
+import androidx.recyclerview.widget.SimpleItemAnimator
+
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,18 +29,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
-        viewModel.getAllPokemon((page*20).toString())
+        getItems()
         setupRecyclerView()
         setRecyclerViewScrollListener()
         subscribeLiveData()
     }
 
     private fun setupRecyclerView() {
+        pokeAdapter.setHasStableIds(true)
         poke_list.adapter = pokeAdapter
         poke_list.layoutManager = LinearLayoutManager(this)
     }
 
-    private fun getMoreItems() {
+    private fun getItems() {
         viewModel.getAllPokemon((page*20).toString())
     }
 
@@ -48,16 +54,18 @@ class MainActivity : AppCompatActivity() {
                 return isLoading
             }
             override fun loadMoreItems() {
+                progress_circular.visibility = View.VISIBLE
                 isLoading = true
                 page+=1
-                getMoreItems()
+                getItems()
             }
         })
     }
 
     private fun subscribeLiveData() {
         viewModel.pokemonsMutableLiveData.observe(this, Observer { list ->
-            pokeAdapter.setList(list)
+            progress_circular.visibility = View.GONE
+            pokeAdapter.addItems(list)
             isLoading = false
         })
     }

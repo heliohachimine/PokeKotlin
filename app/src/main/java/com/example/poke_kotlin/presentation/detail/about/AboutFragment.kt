@@ -46,9 +46,9 @@ class AboutFragment(val id: String, val type: String) : Fragment() {
 
     //TODO passar somente os dados necessarios para otimizar o fluxo de dados
     fun setData(pokemon: Pokemon) {
-        weight = Utils.formatWeight(pokemon.weight)
-        height = Utils.formatHeight(pokemon.height)
-        baseExperience = pokemon.baseExperience
+        weight = pokemon.weight?.let { Utils.formatWeight(it) }.toString()
+        height = pokemon.height?.let { Utils.formatHeight(it) }.toString()
+        baseExperience = pokemon.baseExperience.toString()
         setFields()
     }
 

@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.poke_kotlin.R
 import com.example.poke_kotlin.Utils
+import com.example.poke_kotlin.data.model.TypeResult
 import com.example.poke_kotlin.presentation.detail.about.AboutFragment
 import com.example.poke_kotlin.presentation.detail.evolution.EvolutionFragment
 import com.example.poke_kotlin.presentation.detail.stats.StatsFragment
@@ -64,11 +65,12 @@ class DetailActivity : AppCompatActivity() {
         viewModel.pokemonMutableLiveData.observe(this, Observer {   pokemon ->
             tv_name.text = pokemon.name
             aboutFragment.setData(pokemon)
+            val firstType = pokemon.types?.get(0) as TypeResult
 
-            detail_type_slot_1.setType(pokemon.types[0].type.name)
-            if (pokemon.types.size > 1) {
+            detail_type_slot_1.setType(firstType.type.name)
+            if ((pokemon.types?.size ?: 0) > 1 ) {
                 detail_type_slot_2.visibility = View.VISIBLE
-                detail_type_slot_2.setType(pokemon.types[1].type.name)
+                detail_type_slot_2.setType(pokemon.types?.get(1).type.name)
             } else {
                 detail_type_slot_2.visibility = View.INVISIBLE
             }

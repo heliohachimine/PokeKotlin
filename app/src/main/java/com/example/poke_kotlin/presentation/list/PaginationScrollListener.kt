@@ -22,7 +22,7 @@ abstract class PaginationScrollListener
         super.onScrolled(recyclerView, dx, dy)
 
         val visibleItemCount = layoutManager.childCount
-        val totalItemCount = layoutManager.itemCount
+        val totalItemCount = layoutManager.itemCount - 5
         val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
 
         if (!isLoading() && !isLastPage()) {
