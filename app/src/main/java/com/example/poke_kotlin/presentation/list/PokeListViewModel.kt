@@ -17,7 +17,6 @@ class PokeListViewModel(private val repository: PokeRepository) : ViewModel() {
             kotlin.runCatching {
                 val pokemon = async { repository.getAllPokemons(page = page) }
                 val pokeList = ArrayList<Pokemon>()
-//                pokemonsMutableLiveData.value?.toList()?.let { pokeList.addAll(it) }
                 pokemon.await().results.toList().forEach {
                     val pokemonDetailed = async { it.name?.let { it1 ->
                         repository.getSinglePokemon(

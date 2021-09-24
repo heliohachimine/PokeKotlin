@@ -15,8 +15,11 @@ import com.bumptech.glide.Glide
 import com.example.poke_kotlin.R
 import com.example.poke_kotlin.Utils
 import com.example.poke_kotlin.data.model.Pokemon
-import com.example.poke_kotlin.presentation.TypeComponent
+import com.example.poke_kotlin.presentation.PokemonType
+import com.example.poke_kotlin.presentation.components.TypeComponent
 import com.example.poke_kotlin.presentation.detail.DetailActivity
+import java.util.*
+import kotlin.collections.ArrayList
 
 class PokeAdapter : RecyclerView.Adapter<PokeViewHolder>() {
 
@@ -75,10 +78,17 @@ class PokeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         name.text = pokemon.name
         pokemon.types?.let { types ->
             if (types.isNotEmpty()) {
-                types[0].type.let { type1.setType(it.name) }
+
+                types[0].type.let {
+                    val type = PokemonType.valueOf(it.name.toUpperCase(Locale.ROOT))
+                    type1.setType(type)
+                }
                 if (types.size > 1) {
                     type2.visibility = View.VISIBLE
-                    types[1].type.let { type2.setType(it.name) }
+                    types[1].type.let {
+                        val type = PokemonType.valueOf(it.name.toUpperCase(Locale.ROOT))
+                        type2.setType(type)
+                    }
                 } else {
                     type2.visibility = View.INVISIBLE
                 }

@@ -15,5 +15,4 @@ data class ChainEvolution(
     @SerializedName("evolution_details") val evolutionDetails: List<EvolutionDetails>,
     @SerializedName("evolves_to") val evolveTo: List<ChainEvolution>,
     @SerializedName("species") val species: Link
-
 )

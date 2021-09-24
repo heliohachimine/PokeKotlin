@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/helio/Documents/PokeKotlin/app/src/main/res/drawable/ic_fire.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/helio/Documents/PokeKotlin/app/src/main/res/drawable/ic_flying.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/helio/Documents/PokeKotlin/app/src/main/res/drawable/ic_ice.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/helio/Documents/PokeKotlin/app/src/main/res/layout/activity_main.xml" value="0.2015625" />
+        <entry key="..\:/Users/helio/Documents/PokeKotlin/app/src/main/res/layout/adapter_pokemon.xml" value="0.5" />
+        <entry key="..\:/Users/helio/Documents/PokeKotlin/app/src/main/res/layout/layout_type.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

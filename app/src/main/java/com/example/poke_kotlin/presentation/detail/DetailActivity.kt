@@ -8,11 +8,14 @@ import com.bumptech.glide.Glide
 import com.example.poke_kotlin.R
 import com.example.poke_kotlin.Utils
 import com.example.poke_kotlin.data.model.TypeResult
+import com.example.poke_kotlin.presentation.PokemonType
 import com.example.poke_kotlin.presentation.detail.about.AboutFragment
 import com.example.poke_kotlin.presentation.detail.evolution.EvolutionFragment
 import com.example.poke_kotlin.presentation.detail.stats.StatsFragment
 import kotlinx.android.synthetic.main.activity_detail.*
 import org.koin.android.viewmodel.ext.android.viewModel
+import java.util.*
+import kotlin.collections.ArrayList
 
 class DetailActivity : AppCompatActivity() {
 
@@ -66,11 +69,15 @@ class DetailActivity : AppCompatActivity() {
             tv_name.text = pokemon.name
             aboutFragment.setData(pokemon)
             val firstType = pokemon.types?.get(0) as TypeResult
+            val firstPokemonType = PokemonType.valueOf(firstType.type.name.toUpperCase(Locale.ROOT))
 
-            detail_type_slot_1.setType(firstType.type.name)
-            if ((pokemon.types?.size ?: 0) > 1 ) {
+            detail_type_slot_1.setType(firstPokemonType)
+            if ((pokemon.types.size) > 1 ) {
                 detail_type_slot_2.visibility = View.VISIBLE
-                detail_type_slot_2.setType(pokemon.types?.get(1).type.name)
+
+                val secondType = pokemon.types[1]
+                val secondPokemonType = PokemonType.valueOf(secondType.type.name.toUpperCase(Locale.ROOT))
+                detail_type_slot_2.setType(secondPokemonType)
             } else {
                 detail_type_slot_2.visibility = View.INVISIBLE
             }
